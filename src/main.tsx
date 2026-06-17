@@ -96,21 +96,28 @@ function App() {
           </div>
         </div>
 
-        <aside className="terminal-card" aria-label="Terminal decorativa">
-          <div className="terminal-header">
-            <span />
-            <span />
-            <span />
-            <strong>system.exe</strong>
+        <aside className="hero-console" aria-label="Perfil cyber terminal">
+          <div className="portrait-frame">
+            <img src="/daniel-medina.png" alt="Retrato de Daniel Medina" />
+            <div className="portrait-scanline" />
+            <div className="portrait-badge">PROFILE_LOCKED</div>
           </div>
-          <div className="terminal-body">
-            {commands.map((command, index) => (
-              <p key={`${command}-${index}`} className={index % 2 === 0 ? "prompt" : "output"}>
-                {index % 2 === 0 ? "$ " : ""}
-                {command}
-              </p>
-            ))}
-            <p className="prompt active">$ iniciando_portfolio<span className="cursor">_</span></p>
+          <div className="terminal-card" aria-label="Terminal decorativa">
+            <div className="terminal-header">
+              <span />
+              <span />
+              <span />
+              <strong>system.exe</strong>
+            </div>
+            <div className="terminal-body">
+              {commands.map((command, index) => (
+                <p key={`${command}-${index}`} className={index % 2 === 0 ? "prompt" : "output"}>
+                  {index % 2 === 0 ? "$ " : ""}
+                  {command}
+                </p>
+              ))}
+              <p className="prompt active">$ iniciando_portfolio<span className="cursor">_</span></p>
+            </div>
           </div>
         </aside>
       </section>

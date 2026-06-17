@@ -108,7 +108,7 @@ footer,
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.78fr);
+  grid-template-columns: minmax(0, 0.95fr) minmax(390px, 0.85fr);
   align-items: center;
   gap: 44px;
   min-height: calc(100vh - 110px);
@@ -202,6 +202,93 @@ h1 {
   color: #86a29c;
 }
 
+.hero-console {
+  display: grid;
+  gap: 14px;
+  align-self: center;
+}
+
+.portrait-frame {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  border: 1px solid rgba(125, 255, 220, 0.26);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(125, 255, 220, 0.1), transparent 38%),
+    #061017;
+  box-shadow:
+    0 0 0 1px rgba(125, 255, 220, 0.08),
+    0 28px 90px rgba(0, 255, 204, 0.12),
+    0 24px 90px rgba(0, 0, 0, 0.46);
+}
+
+.portrait-frame::before,
+.portrait-frame::after {
+  position: absolute;
+  z-index: 2;
+  width: 58px;
+  height: 58px;
+  content: "";
+  pointer-events: none;
+}
+
+.portrait-frame::before {
+  top: 14px;
+  left: 14px;
+  border-top: 2px solid #7dffdc;
+  border-left: 2px solid #7dffdc;
+}
+
+.portrait-frame::after {
+  right: 14px;
+  bottom: 14px;
+  border-right: 2px solid #7dffdc;
+  border-bottom: 2px solid #7dffdc;
+}
+
+.portrait-frame img {
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: 50% 22%;
+  filter: contrast(1.08) saturate(0.92);
+}
+
+.portrait-frame::selection {
+  background: transparent;
+}
+
+.portrait-scanline {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.28;
+  background:
+    linear-gradient(rgba(125, 255, 220, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, transparent, rgba(0, 255, 204, 0.16), transparent);
+  background-size: 100% 5px, 100% 100%;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.portrait-badge {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 3;
+  padding: 8px 10px;
+  border: 1px solid rgba(125, 255, 220, 0.3);
+  border-radius: 6px;
+  background: rgba(2, 8, 12, 0.78);
+  color: #7dffdc;
+  font-family: "Cascadia Code", "Fira Code", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  backdrop-filter: blur(10px);
+}
+
 .terminal-card,
 .skill-card,
 .project-card,
@@ -252,15 +339,15 @@ h1 {
 }
 
 .terminal-body {
-  min-height: 410px;
-  padding: 24px;
+  min-height: 250px;
+  padding: 20px;
   font-family: "Cascadia Code", "Fira Code", ui-monospace, SFMono-Regular, monospace;
-  font-size: 0.96rem;
-  line-height: 1.7;
+  font-size: 0.88rem;
+  line-height: 1.55;
 }
 
 .terminal-body p {
-  margin-bottom: 12px;
+  margin-bottom: 9px;
 }
 
 .prompt {
@@ -438,6 +525,12 @@ footer {
   .contact-actions {
     justify-content: flex-start;
   }
+
+  .hero-console {
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 620px) {
@@ -472,9 +565,17 @@ footer {
   }
 
   .terminal-body {
-    min-height: 330px;
+    min-height: 220px;
     padding: 18px;
     font-size: 0.82rem;
+  }
+
+  .portrait-frame {
+    min-height: 340px;
+  }
+
+  .portrait-frame img {
+    height: 390px;
   }
 
   .skills-grid,
