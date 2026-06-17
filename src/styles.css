@@ -1,0 +1,483 @@
+:root {
+  color-scheme: dark;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #020407;
+  color: #e8fff8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(0, 244, 188, 0.2), transparent 30%),
+    radial-gradient(circle at 85% 0%, rgba(0, 123, 255, 0.16), transparent 28%),
+    linear-gradient(135deg, #020407 0%, #081016 48%, #020407 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.portfolio-shell {
+  position: relative;
+  isolation: isolate;
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 40px;
+}
+
+.grid-glow {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(83, 255, 206, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(83, 255, 206, 0.22) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+  pointer-events: none;
+}
+
+.nav-bar {
+  position: sticky;
+  top: 16px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 58px;
+  padding: 12px 16px;
+  border: 1px solid rgba(103, 255, 213, 0.18);
+  border-radius: 8px;
+  background: rgba(4, 12, 17, 0.78);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+}
+
+.brand,
+.nav-links,
+.hero-actions,
+.contact-actions,
+footer,
+.eyebrow,
+.project-topline {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 9px;
+  color: #7dffdc;
+  font-family: "Cascadia Code", "Fira Code", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.95rem;
+}
+
+.nav-links {
+  gap: 8px;
+}
+
+.nav-links a {
+  min-height: 36px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #bde8df;
+  font-size: 0.92rem;
+}
+
+.nav-links a:hover {
+  background: rgba(125, 255, 220, 0.08);
+  color: #ffffff;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(360px, 0.78fr);
+  align-items: center;
+  gap: 44px;
+  min-height: calc(100vh - 110px);
+  padding: 64px 0 42px;
+}
+
+.hero-copy {
+  max-width: 720px;
+}
+
+.eyebrow,
+.section-kicker,
+.project-topline span {
+  color: #7dffdc;
+  font-family: "Cascadia Code", "Fira Code", ui-monospace, SFMono-Regular, monospace;
+}
+
+.eyebrow {
+  gap: 8px;
+  margin: 0 0 18px;
+  font-size: 0.9rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 860px;
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-size: clamp(3.4rem, 8vw, 7.5rem);
+  line-height: 0.9;
+  letter-spacing: 0;
+  text-shadow: 0 0 28px rgba(0, 255, 204, 0.28);
+}
+
+.role {
+  margin-bottom: 14px;
+  color: #d7fff5;
+  font-size: clamp(1.35rem, 3vw, 2.2rem);
+  line-height: 1.18;
+}
+
+.intro {
+  max-width: 660px;
+  margin-bottom: 28px;
+  color: #a8c9c3;
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary-action,
+.secondary-action,
+.contact-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.primary-action {
+  padding: 12px 18px;
+  background: #7dffdc;
+  color: #02100d;
+  box-shadow: 0 0 32px rgba(125, 255, 220, 0.22);
+}
+
+.secondary-action,
+.contact-actions a {
+  padding: 11px 16px;
+  border: 1px solid rgba(125, 255, 220, 0.28);
+  color: #dbfff6;
+  background: rgba(125, 255, 220, 0.06);
+}
+
+.terminal-card,
+.skill-card,
+.project-card,
+.contact-panel,
+.section-band {
+  border: 1px solid rgba(125, 255, 220, 0.18);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(8, 20, 27, 0.92), rgba(4, 9, 14, 0.9));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 22px 80px rgba(0, 0, 0, 0.32);
+}
+
+.terminal-card {
+  overflow: hidden;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 14px;
+  border-bottom: 1px solid rgba(125, 255, 220, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.terminal-header span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #ff5f57;
+}
+
+.terminal-header span:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.terminal-header span:nth-child(3) {
+  background: #28c840;
+}
+
+.terminal-header strong {
+  margin-left: auto;
+  color: #88a9a3;
+  font-family: "Cascadia Code", "Fira Code", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.78rem;
+}
+
+.terminal-body {
+  min-height: 410px;
+  padding: 24px;
+  font-family: "Cascadia Code", "Fira Code", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.terminal-body p {
+  margin-bottom: 12px;
+}
+
+.prompt {
+  color: #7dffdc;
+}
+
+.output {
+  color: #d7fff5;
+}
+
+.active {
+  margin-top: 24px;
+}
+
+.cursor {
+  animation: blink 0.9s steps(2, start) infinite;
+}
+
+.section,
+.section-band,
+.contact-panel {
+  margin-top: 54px;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 22px;
+}
+
+.section-kicker {
+  margin-bottom: 9px;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin-bottom: 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.section-band {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 34px;
+  padding: 34px;
+}
+
+.section-band p:last-child,
+.contact-panel p {
+  margin-bottom: 0;
+  color: #aac8c2;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.skills-grid,
+.project-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.skills-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.skill-card,
+.project-card {
+  min-height: 210px;
+  padding: 22px;
+}
+
+.skill-card svg,
+.project-card svg {
+  color: #7dffdc;
+}
+
+.skill-card h3,
+.project-card h3 {
+  margin: 18px 0 10px;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.skill-card p,
+.project-card p {
+  color: #aac8c2;
+  line-height: 1.65;
+}
+
+.project-topline {
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.project-topline span {
+  padding: 5px 8px;
+  border: 1px solid rgba(125, 255, 220, 0.2);
+  border-radius: 999px;
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.tag-list span {
+  padding: 7px 9px;
+  border-radius: 6px;
+  background: rgba(47, 145, 255, 0.12);
+  color: #b8dfff;
+  font-family: "Cascadia Code", "Fira Code", ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.78rem;
+}
+
+.contact-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 28px;
+  padding: 34px;
+}
+
+.contact-panel h2 {
+  margin-bottom: 12px;
+}
+
+.contact-actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+footer {
+  justify-content: center;
+  gap: 9px;
+  padding-top: 32px;
+  color: #84a19b;
+  font-size: 0.92rem;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .section-band,
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 54px;
+  }
+
+  .skills-grid,
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 620px) {
+  .portfolio-shell {
+    width: min(100% - 22px, 1180px);
+    padding-top: 10px;
+  }
+
+  .nav-bar {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-links a {
+    padding-inline: 8px;
+    font-size: 0.86rem;
+  }
+
+  .hero {
+    gap: 30px;
+    padding-top: 42px;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 16vw, 4.8rem);
+  }
+
+  .terminal-body {
+    min-height: 330px;
+    padding: 18px;
+    font-size: 0.82rem;
+  }
+
+  .skills-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-band,
+  .contact-panel {
+    padding: 22px;
+  }
+}
