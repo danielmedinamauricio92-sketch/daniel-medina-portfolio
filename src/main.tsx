@@ -194,10 +194,15 @@ function App() {
             <Github size={18} />
             GitHub
           </a>
-          <span aria-label="LinkedIn pendiente de configurar">
+          <a
+            href="https://www.linkedin.com/in/mauricio-daniel-medina"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Abrir LinkedIn"
+          >
             <Linkedin size={18} />
-            LinkedIn pronto
-          </span>
+            LinkedIn
+          </a>
         </div>
       </section>
 
