@@ -171,7 +171,8 @@ h1 {
 
 .primary-action,
 .secondary-action,
-.contact-actions a {
+.contact-actions a,
+.contact-actions span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -189,11 +190,16 @@ h1 {
 }
 
 .secondary-action,
-.contact-actions a {
+.contact-actions a,
+.contact-actions span {
   padding: 11px 16px;
   border: 1px solid rgba(125, 255, 220, 0.28);
   color: #dbfff6;
   background: rgba(125, 255, 220, 0.06);
+}
+
+.contact-actions span {
+  color: #86a29c;
 }
 
 .terminal-card,

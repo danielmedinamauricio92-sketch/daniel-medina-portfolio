@@ -181,10 +181,10 @@ function App() {
           </p>
         </div>
         <div className="contact-actions">
-          <a href="mailto:danielmedinamauricio92@gmail.com" aria-label="Enviar email">
+          <span aria-label="Email pendiente de configurar">
             <Mail size={18} />
-            Email
-          </a>
+            Email pronto
+          </span>
           <a
             href="https://github.com/danielmedinamauricio92-sketch"
             target="_blank"
@@ -194,15 +194,10 @@ function App() {
             <Github size={18} />
             GitHub
           </a>
-          <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Abrir LinkedIn"
-          >
+          <span aria-label="LinkedIn pendiente de configurar">
             <Linkedin size={18} />
-            LinkedIn
-          </a>
+            LinkedIn pronto
+          </span>
         </div>
       </section>
 
